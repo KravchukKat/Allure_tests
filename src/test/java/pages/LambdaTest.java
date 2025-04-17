@@ -77,16 +77,4 @@ public class LambdaTest extends TestBase {
         });
     }
 
-    @Test
-    public void testAnnotatedStep() {
-        SelenideLogger.addListener("allure", new AllureSelenide());
-        WebSteps steps = new WebSteps();
-
-        steps.openMainPage();
-        steps.searchForRepository(REPOSITORY);
-        steps.clickOnRepositoryLink(REPOSITORY);
-        steps.openIssuesTab();
-        steps.shouldSeeIssueWithNumber(ISSUE);
-        steps.takeScreenshot();
-    }
 }
